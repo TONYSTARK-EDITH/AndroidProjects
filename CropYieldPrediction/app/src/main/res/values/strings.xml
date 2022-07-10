@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Crop Yield Prediction</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Dashboard</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="nitrogen">Nitrogen (mg/sqft)</string>
+    <string name="phosporus">Phospoorus (mg/sqft)</string>
+    <string name="crop">Crop Yield Prediction</string>
+    <string name="potassium">Pottasium(mg/sqft)</string>
+    <string name="rainfall">Avg Rainfall</string>
+    <string name="area">Area</string>
+    <string name="Hectare">Units</string>
+    <string name="growth">Growth Period</string>
+    <string name="temp">Temperature (°C)</string>
+    <string name="moist">Moisture</string>
+    <string name="Paddy">Crop</string>
+    <string name="predict">Predict</string>
+    <string name="min">Minimum value 1</string>
+    <string name="min_10">Minimum value 10</string>
+    <string name="min_max">Minimum 1 and Maximum 12</string>
+    <string name="min_15">Minimum value 15</string>
+    <string name="ok">OK</string>
+</resources>

@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">PasswordSaver</string>
+    <string name="tmp">Hi</string>
+    <string name="username">UserName</string>
+    <string name="password">PassWord</string>
+    <string name="add">Add</string>
+    <string name="export">Export</string>
+    <string name="Import">Import</string>
+    <string name="back">back</string>
+    <string name="qr">Scan this QR code to import the passwords</string>
+    <string name="secret_key">Secret Key</string>
+    <string name="set">Set</string>
+    <string name="cancel">Cancel</string>
+    <string name="clear">Clear Database</string>
+    <string name="gen">Generate Password</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="tile_name">Generate</string>
+    <string name="Import_Using_Image">Import Using Image</string>
+    <string name="text">Scan the QR Code to Import</string>
+</resources>
