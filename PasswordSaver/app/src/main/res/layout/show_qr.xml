@@ -24,4 +24,14 @@
         android:layout_marginRight="25sp"
         android:contentDescription="@string/tmp" />
 
+    <Button
+        android:id="@+id/next"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/qr"
+        android:layout_centerHorizontal="true"
+        android:text="@string/next" />
+
+
 </RelativeLayout>

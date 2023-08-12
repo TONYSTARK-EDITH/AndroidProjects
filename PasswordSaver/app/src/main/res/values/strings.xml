@@ -6,6 +6,8 @@
     <string name="add">Add</string>
     <string name="export">Export</string>
     <string name="Import">Import</string>
+    <string name="ImportFrom">IMPORT FROM</string>
+    <string name="ExportTo">EXPORT TO</string>
     <string name="back">back</string>
     <string name="qr">Scan this QR code to import the passwords</string>
     <string name="secret_key">Secret Key</string>
@@ -18,4 +20,11 @@
     <string name="tile_name">Generate</string>
     <string name="Import_Using_Image">Import Using Image</string>
     <string name="text">Scan the QR Code to Import</string>
+    <string name="next">next</string>
+    <string name="Done">Done</string>
+    <string name="Import_Using_Single_Image">Single Image</string>
+    <string name="Import_Using_Multiple_Image">Multiple Image</string>
+    <string name="Ok">OK</string>
+    <string name="share">Share File</string>
+    <string name="delete">DELETE</string>
 </resources>

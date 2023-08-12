@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/drawable/button_bg.xml" value="0.2355" />
         <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/drawable/ic_back_background.xml" value="0.1525" />
         <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/drawable/ic_back_black_background.xml" value="0.1525" />
         <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2265" />
@@ -18,12 +18,12 @@
         <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/layout-night/password_item.xml" value="0.25" />
         <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/layout-night/qr_code_scanner.xml" value="0.2" />
         <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
-        <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/layout/add_passwords.xml" value="0.25" />
+        <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/layout/add_passwords.xml" value="0.1" />
         <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/layout/cleardatabase.xml" value="0.27447916666666666" />
         <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/layout/menu.xml" value="0.10729166666666666" />
         <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/layout/password_item.xml" value="0.25" />
-        <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/layout/popup.xml" value="0.24635416666666668" />
-        <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/layout/qr_code_scanner.xml" value="0.23981481481481481" />
+        <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/layout/popup.xml" value="0.1" />
+        <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/layout/qr_code_scanner.xml" value="0.1" />
         <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/layout/show_qr.xml" value="0.24635416666666668" />
         <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/menu-night/back_menu.xml" value="0.2734375" />
         <entry key="..\:/Users/manth/AndroidStudioProjects/PasswordSaver/app/src/main/res/menu/back_menu.xml" value="0.24635416666666668" />
@@ -37,7 +37,7 @@
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="jbr-17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

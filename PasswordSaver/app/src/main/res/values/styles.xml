@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--    <style name="TextAppearance.App.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1"></style>-->
+
+<!--    <style name="ShapeAppearance.App.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">-->
+<!--        <item name="cornerFamily">cut</item>-->
+<!--        <item name="cornerSize">4dp</item>-->
+<!--    </style>-->
+
+<!--    <style name="Theme.App" parent="Theme.MaterialComponents">-->
+<!--        <item name="bottomAppBarStyle">@style/Widget.App.BottomAppBar</item>-->
+<!--        <item name="floatingActionButtonStyle">@style/Widget.App.FloatingActionButton</item>-->
+<!--    </style>-->
+
+<!--    <style name="Widget.App.BottomAppBar" parent="Widget.MaterialComponents.BottomAppBar.Colored">-->
+<!--        <item name="materialThemeOverlay">-->
+<!--            @style/Widget.MaterialComponents.BottomAppBar.PrimarySurface-->
+<!--        </item>-->
+<!--    </style>-->
+
+<!--    <style name="Widget.App.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">-->
+<!--        <item name="materialThemeOverlay">@style/ThemeOverlay.App.FloatingActionButton</item>-->
+<!--    </style>-->
+
+<!--    <style name="ThemeOverlay.App.BottomAppBar" parent="">-->
+
+<!--        <item name="textAppearanceSubtitle1">@style/TextAppearance.App.Subtitle1</item>-->
+<!--    </style>-->
+
+<!--    <style name="ThemeOverlay.App.FloatingActionButton" parent="">-->
+
+<!--        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.App.SmallComponent</item>-->
+<!--    </style>-->
+</resources>

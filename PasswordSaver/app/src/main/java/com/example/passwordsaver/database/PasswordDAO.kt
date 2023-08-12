@@ -12,7 +12,7 @@ interface PasswordDAO {
     @Delete
     fun delete(pwd: PasswordData)
 
-    @Query("SELECT password from password_data_base where username = :username")
+    @Query("SELECT password FROM password_data_base WHERE username = :username")
     fun getPassword(username: String): String
 
     @Query("SELECT * FROM password_data_base")

@@ -2,38 +2,28 @@ package com.example.passwordsaver
 
 import android.Manifest
 import android.annotation.SuppressLint
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.graphics.Canvas
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.util.SparseArray
 import android.view.SurfaceHolder
 import android.view.SurfaceView
-import android.view.animation.Animation
-import android.view.animation.Animation.AnimationListener
-import android.view.animation.AnimationUtils
-import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.vision.CameraSource
 import com.google.android.gms.vision.Detector
-import com.google.android.gms.vision.Frame
 import com.google.android.gms.vision.barcode.Barcode
 import com.google.android.gms.vision.barcode.BarcodeDetector
 import java.io.IOException
 
 
+@Suppress("PrivatePropertyName")
 class QrCodeScanner : AppCompatActivity() {
 
-    private val RESULT_IMPORT_IMAGE = 2
+    private val RESULT_FROM_CAM = 2
 
     private val permissionStorage = arrayOf(
         Manifest.permission.READ_EXTERNAL_STORAGE,
@@ -46,9 +36,6 @@ class QrCodeScanner : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.qr_code_scanner)
         supportActionBar?.hide()
-        val backCameraButton: ImageView = findViewById(R.id.back)
-        val captureCameraButton: ImageView = findViewById(R.id.capture)
-        val smallImage: ImageView = findViewById(R.id.smallImage)
         val barcodeDetector = BarcodeDetector.Builder(this)
             .setBarcodeFormats(Barcode.QR_CODE)
             .build()
@@ -60,6 +47,8 @@ class QrCodeScanner : AppCompatActivity() {
             .build()
 
         val cameraView = findViewById<SurfaceView>(R.id.surfaceView)
+        var totalResult = ""
+        val qrStack = ArrayList<Int>()
 
         cameraView.holder.addCallback(object : SurfaceHolder.Callback {
             @SuppressLint("Range")
@@ -98,97 +87,35 @@ class QrCodeScanner : AppCompatActivity() {
                 val barcodes: SparseArray<Barcode?>? = detections!!.detectedItems
 
                 if (barcodes?.size() != 0) {
-                    val intent = Intent()
-                    intent.putExtra("result", barcodes?.valueAt(0)?.displayValue)
-                    setResult(RESULT_IMPORT_IMAGE, intent)
-                    finish()
-                }
-            }
-        })
-
-        backCameraButton.setOnClickListener {
-            setResult(RESULT_CANCELED)
-            finish()
-        }
-
-        captureCameraButton.setOnClickListener {
-            imageViewAnimatedChange(
-                this,
-                captureCameraButton,
-                AppCompatResources.getDrawable(this, R.mipmap.ic_capture_color_foreground)
-                    ?.let { it1 ->
-                        getBitmapFromDrawable(it1)
+                    val input = barcodes?.valueAt(0)?.displayValue
+                    val idx = input?.get(0)?.digitToInt()
+                    val value = input?.substring(1)
+                    if (!qrStack.contains(idx)) {
+                        totalResult += value
+                        if (idx != null) {
+                            qrStack.add(idx)
+                        }
+                        if (idx == 0) {
+                            val intent = Intent()
+                            intent.putExtra("result", totalResult)
+                            setResult(RESULT_FROM_CAM, intent)
+                            finish()
+                        } else {
+                            createToast()
+                        }
                     }
-            )
-            cameraSource.takePicture(null) {
 
-                val bitmap = BitmapFactory.decodeByteArray(it, 0, it.size)
-                val myFrame = Frame.Builder().setBitmap(bitmap).build()
-                imageViewAnimatedChange(
-                    this,
-                    smallImage,
-                    bitmap,
-                    android.R.anim.slide_in_left,
-                    android.R.anim.slide_out_right,
-                    false
-                )
-                Handler(Looper.getMainLooper()).postDelayed({
-                    imageViewAnimatedChange(
-                        this,
-                        smallImage,
-                        null,
-                        android.R.anim.slide_out_right,
-                        android.R.anim.slide_in_left
-                    )
-                }, 5000)
-                val barcodes = barcodeDetector.detect(myFrame)
-                if (barcodes.size() != 0) {
-                    val intent = Intent()
-                    intent.putExtra("result", barcodes.valueAt(0).displayValue)
-                    setResult(RESULT_IMPORT_IMAGE, intent)
-                    finish()
+
                 }
-                Toast.makeText(this, "There is no codes here 😂", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-
-    private fun getBitmapFromDrawable(drawable: Drawable): Bitmap {
-        val bmp = Bitmap.createBitmap(
-            drawable.intrinsicWidth,
-            drawable.intrinsicHeight,
-            Bitmap.Config.ARGB_8888
-        )
-        val canvas = Canvas(bmp)
-        drawable.setBounds(0, 0, canvas.width, canvas.height)
-        drawable.draw(canvas)
-        return bmp
-    }
-
-    private fun imageViewAnimatedChange(
-        c: Context?,
-        v: ImageView,
-        new_image: Bitmap?,
-        out: Int = android.R.anim.fade_out,
-        In: Int = android.R.anim.fade_in,
-        both: Boolean = true
-    ) {
-        val animOut: Animation = AnimationUtils.loadAnimation(c, out)
-        val animIn: Animation = AnimationUtils.loadAnimation(c, In)
-        animOut.setAnimationListener(object : AnimationListener {
-            override fun onAnimationStart(animation: Animation) {}
-            override fun onAnimationRepeat(animation: Animation) {}
-            override fun onAnimationEnd(animation: Animation) {
-                v.setImageBitmap(new_image)
-                animIn.setAnimationListener(object : AnimationListener {
-                    override fun onAnimationStart(animation: Animation) {}
-                    override fun onAnimationRepeat(animation: Animation) {}
-                    override fun onAnimationEnd(animation: Animation) {}
-                })
-                if (both)
-                    v.startAnimation(animIn)
             }
         })
-        v.startAnimation(animOut)
+
+
+    }
+
+    private fun createToast(msg: String = "Scan the next QR 😁") {
+        Handler(Looper.getMainLooper()).post {
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+        }
     }
 }
